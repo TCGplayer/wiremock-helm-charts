@@ -1,0 +1,17 @@
+name: PR Checklists
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  pr_checks:
+    uses: TCGplayer/clip-github-actions/.github/workflows/pr_checkboxes.yaml@main
+    secrets: inherit
